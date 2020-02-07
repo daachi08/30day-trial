@@ -1,0 +1,248 @@
+@import "_color.scss";
+@import "_typography.scss";
+@import "_mixin.scss";
+@import "_responsive.scss";
+/*
+    header
+*/
+
+.header{
+    background-image: url(../image/mv.png);
+    height: 648px;
+    background-size: cover;
+    object-fit: cover;
+    @include sp {
+      background-position-x: -220px;
+      height: 667px;
+    };
+}
+
+
+
+
+/* ドロワーメニュー　*/
+
+.overlay {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    background-color: #000000CC;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  .overlay.open {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  
+  
+  .menu-trigger {
+    display: none;
+    width: 28px;
+    height: 24px;
+    vertical-align: middle;
+    cursor: pointer;
+    position: fixed;
+    top: 21px;
+    right: 15px;
+    z-index: 100;
+    transform: translateX(0);
+    transition: transform .5s;
+   }
+
+   /*--ハンバーガーメニューの表示--*/
+    .menu-trigger {
+      @include sp {
+      display: block;
+      };
+    }
+
+   .menu-trigger.active {
+    transform: translateX(-250px);
+  }
+   .menu-trigger span {
+    display: inline-block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: $MainColor;
+    border-radius: 12px;
+  }
+  .menu-trigger.active span {
+    background-color: #FFFFFF;
+  }
+  .menu-trigger span:nth-of-type(1) {
+    top: 4px;
+  }
+  .menu-trigger.active span:nth-of-type(1) {
+    transform: translateY(7px) rotate(-45deg);
+  }
+  .menu-trigger span:nth-of-type(2) {
+    top: 12px;
+  }
+  .menu-trigger.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  .menu-trigger span:nth-of-type(3) {
+    bottom: 0;
+  }
+  .menu-trigger.active span:nth-of-type(3) {
+    transform: translateY(-9px) rotate(45deg);
+  }
+  
+  nav {
+    width: 250px;
+    height: 100%;
+    padding-top: 0px;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 13;
+    transform: translate(250px);
+    transition: all .5s;
+  }
+  nav.open {
+    transform: translateZ(0);
+  }
+  nav li {
+    padding: 6px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: $ff-Montserrat;
+  }
+  
+  nav li a {
+    text-decoration: none;
+    color: $MainColor;
+  
+  }
+  
+  li img {
+    float: right;
+    margin-top: 6px;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .drawer-list {
+    margin-top: 150px;
+    margin-left: 68px;
+  }
+  
+  
+  /* ドロワーメニュー終わり */
+
+.header-logo {
+  display: none;
+  /*--ヘッダーロゴの表示--*/
+  @include sp {
+    display: block;
+    text-align: left;
+    padding-top: 6%;
+    padding-left: 4%
+  };
+}
+
+.header-list {
+    text-align: center;
+    height: 80px;
+    background-color: #FFFFFF1A;
+    @include sp {
+    height: 70px;
+    };
+    ul {
+        padding: 28px 80px 0px 0px;
+        /*--ヘッダーリストの非表示--*/
+        @include sp {
+          display: none;
+        };
+    }
+}
+
+.header-list li{
+    display: inline;
+    text-align: center;
+    font-family: $ff-Montserrat;
+    padding: 0px 0px 0px 34px;
+    font-weight: bold;
+    
+    a{
+        color: $MainColor;
+    }
+}
+.header-message {
+    margin-left: 53.7%;
+    margin-top: 10%;
+     /*--メッセージの中央配置--*/
+    
+     @include sp {
+      margin-left: 5%;
+      margin-top: 34%;
+      margin-right: 4%;
+    };
+
+    p{
+    margin-top: 34px;
+    
+    letter-spacing: 0.6px;
+    }
+}
+
+.header-message_br {
+    @include tab {
+    display: none;
+  };
+}
+
+
+
+.header-message_first {
+    font-size: 30px;
+    line-height: 1.5;
+    /*--メッセージの中央配置--*/
+    @include sp {
+    font-size: 24px;
+    line-height: 1.9;
+    };
+}
+
+.header-message_second {
+    font-size: 18px;
+    @include sp {
+    font-size: 16px;
+  };
+}
+
+.header-message_btn {
+    @include btn-form;
+    /*--メッセージボタンの中央配置--*/
+    @include sp {
+    width: 68%;
+    padding: 14px 24px;
+    margin: auto;
+    display: block;
+    };
+
+    a{
+        text-decoration: none;
+        color: #FFFFFF;
+        font-weight: bold;
+    }
+}
+
+
+
+/*
+    header end
+*/

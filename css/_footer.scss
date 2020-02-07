@@ -1,0 +1,102 @@
+@import "_responsive.scss";
+
+/*
+    footer
+*/
+.footer-left_wrapper {
+    color: #ffffff
+}
+
+.footer-left_wrapper {
+
+    background-color: $MainColor;
+    display: flex;
+    justify-content: space-between;
+    padding: 8.6% 0% 2% 6.8%;
+    @include sp {
+        display: block;
+        padding: 16.6% 0% 2% 0;
+    }
+}
+
+.footer-left_icon {
+    @include sp {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.fa-twitter {
+    opacity: 0.6;
+    font-size: 39px;
+    @include sp {
+        margin-left:6%;
+    }
+}
+
+.fa-facebook-square {
+    margin-left: 14px;
+    opacity: 0.6;
+    font-size: 40px;
+    @include sp {
+        margin-right: 7%;
+    }
+
+}
+
+.footer-left_list {
+    margin-top: 27px;
+    font-size: 18px;
+    letter-spacing: 0.45px;
+    line-height: 2.4;
+    @include sp {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 31px;
+        line-height: 2.5;
+        padding-left: 7%;
+        padding-right: 3%;
+        font-size: 14px;
+    }
+}
+
+
+.footer-right {
+    text-align: right;
+    
+}
+
+.footer-right_corp {
+    font-size: 44px;
+    margin-top: 42px;
+    margin-right: 97px;
+    @include sp {
+        font-size: 34.4px;
+        margin-top: 44px;
+        text-align: center;
+        margin-right: 0px;
+    }
+}
+
+.footer-right_copyright {
+    font-size: 12px;
+    margin-top: 8px;
+    margin-right: 94px;
+    letter-spacing: 0.9px;
+    @include sp {
+    margin-top: 0px;
+    margin-right: 0px;
+    text-align: center;
+    }
+}
+
+.fotter-back_btn {
+    margin: 80px 93px 0 0px;
+}
+
+
+
+/*
+    footer end
+*/
